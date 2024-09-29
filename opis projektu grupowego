@@ -1,0 +1,85 @@
+1. Tytuł Projektu 
+
+"GymApp – Plany Treningowe" 
+
+Prosta i wygodna aplikacja do tworzenia, zarządzania planami treningowymi oraz śledzenia postępów użytkowników na siłowni. 
+
+2. Skład zespołu 
+
+Klasa 3b: 
+
+Michał Grzęda 
+
+Oliwia Mikucka 
+
+Maciej Wargowski 
+
+3. Cel główny projektu 
+
+Celem projektu jest stworzenie aplikacji mobilnej wspierającej użytkowników w efektywnym i bezpiecznym treningu na siłowni, poprzez oferowanie spersonalizowanych planów treningowych, śledzenie postępów oraz dostarczanie wskazówek dotyczących techniki ćwiczeń. Aplikacja ma pomóc użytkownikom osiągać ich cele fitnessowe, motywować ich do regularnych ćwiczeń oraz zapewnić im narzędzia do monitorowania i analizy wyników. 
+
+Grupą docelową są osoby regularnie trenujące na siłowni, jak również osoby początkujące szukające wsparcia w organizacji swoich treningów. 
+
+4. Zakres funkcjonalności 
+
+Moduły: 
+
+Moduł Rejestracji i Logowania: 
+
+Rejestracja użytkowników i logowanie przy użyciu numeru telefonu lub e-maila. 
+
+Moduł Treningowy: 
+
+Tworzenie spersonalizowanych planów treningowych na podstawie wybranych ćwiczeń i celów użytkownika. 
+
+Wyszukiwanie ćwiczeń według kategorii (np. siła, wytrzymałość, mobilność). 
+
+Instrukcje dotyczące poprawnej techniki wykonywania ćwiczeń, w tym ilustracje i opisy. 
+
+Moduł Po-Treningowy: 
+
+Podsumowanie treningu, w tym ocena intensywności, liczba wykonanych serii i powtórzeń. 
+
+Analiza postępów na podstawie wykonanych treningów (np. zwiększona liczba powtórzeń, wyższy ciężar). 
+
+Moduł Powiadomień: 
+
+Powiadomienia o nadchodzących treningach, przypomnienia o dniach wolnych od treningu. 
+
+Dodatkowe funkcjonalności: 
+
+Historia zapisanych treningów użytkownika, z możliwością filtrowania po dacie i rodzaju ćwiczenia. 
+
+Ranking rekordowych wyników, w tym np. najcięższe podniesione ciężary w różnych kategoriach. 
+
+Obliczanie maksymalnego ciężaru (1RM) na podstawie wyników z poszczególnych treningów. 
+
+Możliwość dzielenia się postępami z innymi użytkownikami aplikacji. 
+
+MVP: 
+
+Rejestracja i logowanie. 
+
+Tworzenie i zapis planów treningowych. 
+
+Szacowanie ilości spalonych kalorii na podstawie rodzaju ćwiczenia i jego intensywności. 
+
+Generowanie raportów treningowych po każdej sesji. 
+
+5. Technologie 
+
+Języki programowania: 
+
+Kotlin (Android) 
+
+Java (backend) 
+
+Frameworki: 
+
+SpringBoot 
+
+Narzędzia: 
+
+Firebase (autoryzacja, baza danych, powiadomienia) 
+
+Git (kontrola wersji) 
