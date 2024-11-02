@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpyic6wwlaeq7"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_a451q"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a451q")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="graj" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Graj"
+
+[node name="opcje" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Opcje"
+
+[node name="wyjdź" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Wyjdź"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/graj" to="." method="_on_graj_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/opcje" to="." method="_on_opcje_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/wyjdź" to="." method="_on_wyjdź_pressed"]
