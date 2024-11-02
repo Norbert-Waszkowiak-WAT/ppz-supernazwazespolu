@@ -1,0 +1,14 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://d5y336pc52kw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yieio"]
+bg_color = Color(0.59, 0.0826, 0.0826, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+shadow_size = 5
+
+[resource]
+Button/styles/normal = SubResource("StyleBoxFlat_yieio")
