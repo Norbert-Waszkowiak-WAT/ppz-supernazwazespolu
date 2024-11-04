@@ -2,7 +2,7 @@ extends Control
 
 
 func _on_graj_pressed() -> void:
-	get_tree().change_scene_to_file("res://gra.tscn")
+	get_tree().change_scene_to_file("res://wyborlvl.tscn")
 
 
 func _on_opcje_pressed() -> void:
