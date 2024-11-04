@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx8tvxfddxr3f"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_a451q"]
+[ext_resource type="Texture2D" uid="uid://cv4mg0md3wla1" path="res://Screenshot 2024-11-02 194727.png" id="2_pyxei"]
+[ext_resource type="Theme" uid="uid://d5y336pc52kw" path="res://p.tres" id="3_o4fua"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+script = ExtResource("1_a451q")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_top = 2.0
+offset_right = 1151.0
+offset_bottom = 646.0
+texture = ExtResource("2_pyxei")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -86.0
+offset_right = -387.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_o4fua")
+
+[node name="graj" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_o4fua")
+text = "Graj"
+
+[node name="opcje" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_o4fua")
+text = "Opcje"
+
+[node name="wyjdź" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme = ExtResource("3_o4fua")
+text = "Wyjdź"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/graj" to="." method="_on_graj_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/opcje" to="." method="_on_opcje_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/wyjdź" to="." method="_on_wyjdź_pressed"]

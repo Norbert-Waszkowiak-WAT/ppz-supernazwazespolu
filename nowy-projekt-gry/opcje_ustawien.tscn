@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://co8yqku5bd0nx"]
+
+[ext_resource type="Script" path="res://opcje_ustawien.gd" id="1_wnufs"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+script = ExtResource("1_wnufs")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -50.5
+offset_right = 27.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="samochody" type="Button" parent="."]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 97.0
+offset_bottom = 33.0
+text = "samochody"
+
+[node name="cofnij" type="Button" parent="samochody"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 37.0
+offset_right = 50.0
+offset_bottom = 68.0
+text = "cofnij
+"
+
+[connection signal="pressed" from="samochody/cofnij" to="." method="_on_cofnij_pressed"]
