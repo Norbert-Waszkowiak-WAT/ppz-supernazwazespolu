@@ -58,4 +58,3 @@ layout_mode = 2
 text = "lvl 4"
 
 [connection signal="pressed" from="TextureRect/MarginContainer/GridContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="TextureRect/MarginContainer/GridContainer/Button2" to="." method="_on_button_2_pressed"]
