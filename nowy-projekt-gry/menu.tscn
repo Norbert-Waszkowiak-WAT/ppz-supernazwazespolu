@@ -6,11 +6,10 @@
 
 [node name="Menu" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -763.0
-offset_bottom = -427.0
+anchor_right = 0.6
+anchor_bottom = 0.599
+offset_right = 767.0
+offset_bottom = 432.08
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
@@ -19,19 +18,21 @@ script = ExtResource("1_a451q")
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
 offset_top = 2.0
-offset_right = 1151.0
-offset_bottom = 646.0
+offset_right = 1920.0
+offset_bottom = 1079.0
 texture = ExtResource("2_pyxei")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 14
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = -86.0
-offset_right = -387.0
-offset_bottom = 43.0
+offset_left = -28.0
+offset_top = -53.5
+offset_right = 28.0
+offset_bottom = 53.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)

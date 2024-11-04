@@ -21,4 +21,4 @@ shape = SubResource("BoxShape3D_8bedr")
 [node name="glowa" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="glowa"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.86665, 0, 2, 4)
+transform = Transform3D(1.24238, 0, 0, 0, 1.24238, 0, 0, 0, 1.24238, 0, 2, 4)
