@@ -12,12 +12,10 @@ script = ExtResource("1_bn60o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 3.14159
-scale = Vector2(1, 1.06)
+scale = Vector2(0.2, 0.212)
 texture = ExtResource("2_npxmt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 scale = Vector2(11.3047, 26.174)
 shape = SubResource("CapsuleShape2D_57vvp")
-
-[node name="Camera2D" type="Camera2D" parent="."]

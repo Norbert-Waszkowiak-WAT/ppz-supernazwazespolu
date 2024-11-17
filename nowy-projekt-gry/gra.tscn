@@ -8,6 +8,9 @@
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(3.3063, 2.75404)
 texture = ExtResource("1_uhjot")
 
 [node name="auto" parent="." instance=ExtResource("2_swsei")]
+
+[node name="Camera2D" type="Camera2D" parent="auto"]

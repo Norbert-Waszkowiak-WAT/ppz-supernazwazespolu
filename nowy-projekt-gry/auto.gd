@@ -2,19 +2,19 @@ extends CharacterBody2D
 
 @onready var player = $"../Player"
 
-@export var steering_angle = 15  # Maximum angle for steering the car's wheels
-@export var engine_power = 900  # How much force the engine can apply for acceleration
-@export var friction = -55  # The friction coefficient that slows down the car
-@export var drag = -0.06  # Air drag coefficient that also slows down the car
-@export var braking = -450  # Braking power when the brake input is applied
-@export var max_speed_reverse = 250  # Maximum speed limit in reverse
-@export var slip_speed = 400  # Speed above which the car's traction decreases (for drifting)
-@export var traction_fast = 2.5  # Traction factor when the car is moving fast (affects control)
-@export var traction_slow = 10  # Traction factor when the car is moving slow (affects control)
+@export var steering_angle = 15  # Maksymalny kąt skrętu kół samochodu
+@export var engine_power = 900  # Siła, jaką silnik może zastosować do przyspieszenia
+@export var friction = -55  # Współczynnik tarcia spowalniający samochód
+@export var drag = -0.06  # Współczynnik oporu powietrza, który także spowalnia samochód
+@export var braking = -450  # Siła hamowania przy wciśnięciu hamulca
+@export var max_speed_reverse = 250  # Maksymalna prędkość wsteczna
+@export var slip_speed = 400  # Prędkość, powyżej której przyczepność samochodu maleje (do driftu)
+@export var traction_fast = 2.5  # Współczynnik przyczepności przy dużej prędkości (wpływa na kontrolę)
+@export var traction_slow = 10  # Współczynnik przyczepności przy małej prędkości (wpływa na kontrolę)
 
-var wheel_base = 65  # Distance between the front and back axle of the car
-var acceleration = Vector2.ZERO  # Current acceleration vector
-var steer_direction  # Current direction of steering
+var wheel_base = 65  # Odległość między przednią a tylną osią samochodu
+var acceleration = Vector2.ZERO  # Aktualny wektor przyspieszenia
+var steer_direction  # Aktualny kierunek skrętu
 
 @export var is_active = false
 
@@ -22,68 +22,66 @@ func _physics_process(delta: float) -> void:
 	if is_active:
 		$Camera2D.enabled = true
 		acceleration = Vector2.ZERO
-		get_input()  # Take input from player
-		calculate_steering(delta)  # Apply turning logic based on steering
+		get_input()  # Pobierz dane wejściowe od gracza
+		calculate_steering(delta)  # Zastosuj logikę skrętu na podstawie sterowania
 	else:
 		$Camera2D.enabled = false
 
-	velocity += acceleration * delta  # Apply the resulting acceleration to the velocity
-	apply_friction(delta)  # Apply friction forces to the car
-	move_and_slide()  # Move the car and handle collisions
-	
+	velocity += acceleration * delta  # Zastosuj wynikowe przyspieszenie do prędkości
+	apply_friction(delta)  # Zastosuj siły tarcia na samochód
+	move_and_slide()  # Przesuń samochód i obsłuż kolizje
 
-#function to handle input from the user and apply effects to the car's movement
+# Funkcja do obsługi wejścia od użytkownika i zastosowania efektów na ruch samochodu
 func get_input():
-	# Get steering input and translate it to an angle
+	# Pobierz dane wejściowe dotyczące skrętu i przetłumacz je na kąt
 	var turn = Input.get_axis("move_left", "move_right")
 	steer_direction = turn * deg_to_rad(steering_angle)
 
-	# If accelerate is pressed, apply engine power to the car's forward direction
+	# Jeśli przycisk przyspieszenia jest wciśnięty, zastosuj moc silnika w kierunku jazdy
 	if Input.is_action_pressed("move_up"):
 		acceleration = transform.x * engine_power
 
-	# If brake is pressed, apply braking force
+	# Jeśli przycisk hamowania jest wciśnięty, zastosuj siłę hamowania
 	if Input.is_action_pressed("move_down"):
 		acceleration = transform.x * braking
 
-#Function to apply friction forces to the car, making it 'slide' to a halt
+# Funkcja do zastosowania sił tarcia na samochód, co powoduje jego „ślizganie się” do zatrzymania
 func apply_friction(delta):
-	# If there is no input and speed is very low, just stop to prevent endless sliding
+	# Jeśli brak jest wejścia i prędkość jest bardzo niska, zatrzymaj samochód, aby zapobiec nieskończonemu ślizganiu
 	if acceleration == Vector2.ZERO and velocity.length() < 50:
 		velocity = Vector2.ZERO
-	# Calculate friction force and air drag based on current velocity, and apply it
+	# Oblicz siłę tarcia i oporu powietrza na podstawie aktualnej prędkości i zastosuj je
 	var friction_force = velocity * friction * delta
 	var drag_force = velocity * velocity.length() * drag * delta
-	# Add the forces to the acceleration
+	# Dodaj siły do przyspieszenia
 	acceleration += drag_force + friction_force
 
-	
-# Function to calculate the steering effect
+# Funkcja do obliczenia efektu skrętu
 func calculate_steering(delta):
-	# Calculate the positions of the rear and front wheel
+	# Oblicz pozycje tylnych i przednich kół
 	var rear_wheel = position - transform.x * wheel_base / 2.0
 	var front_wheel = position + transform.x * wheel_base / 2.0
-	# Advance the wheels' positions based on the current velocity, applying rotation to the front wheel
+	# Przesuń pozycje kół na podstawie aktualnej prędkości, stosując rotację do przedniego koła
 	rear_wheel += velocity * delta
 	front_wheel += velocity.rotated(steer_direction) * delta
-	# Calculate the new heading based on the wheels' positions
+	# Oblicz nowy kierunek na podstawie pozycji kół
 	var new_heading = rear_wheel.direction_to(front_wheel)
 
-	# Choose the traction model based on the current speed
+	# Wybierz model trakcji na podstawie aktualnej prędkości
 	var traction = traction_slow
 	if velocity.length() > slip_speed:
 		traction = traction_fast
 
-	# Dot product represents how aligned the new heading is with the current velocity direction
+	# Iloczyn skalarny reprezentuje, jak bardzo nowy kierunek jest wyrównany z aktualnym kierunkiem prędkości
 	var d = new_heading.dot(velocity.normalized())
 
-	# If not braking (d > 0), adjust the car velocity smoothly towards the new heading
+	# Jeśli nie hamujemy (d > 0), dopasuj płynnie prędkość samochodu do nowego kierunku
 	if d > 0:
 		velocity = lerp(velocity, new_heading * velocity.length(), traction * delta)
 
-	# If braking (d < 0), reverse the direction and limit the speed
+	# Jeśli hamujemy (d < 0), odwróć kierunek i ogranicz prędkość
 	if d < 0:
 		velocity = -new_heading * min(velocity.length(), max_speed_reverse)
 
-	# Update the car's rotation to face in the direction of the new heading
+	# Zaktualizuj obrót samochodu, aby skierować go w stronę nowego kierunku
 	rotation = new_heading.angle()
