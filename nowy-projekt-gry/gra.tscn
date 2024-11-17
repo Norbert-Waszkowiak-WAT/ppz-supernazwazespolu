@@ -1,5 +1,13 @@
-[gd_scene format=3 uid="uid://bqfnci06sopd3"]
+[gd_scene load_steps=3 format=3 uid="uid://bqfnci06sopd3"]
+
+[ext_resource type="Texture2D" uid="uid://bm6f11woirxy8" path="res://parking.png" id="1_uhjot"]
+[ext_resource type="PackedScene" uid="uid://bd072kqtvb4gy" path="res://auto.tscn" id="2_swsei"]
 
 [node name="gra" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_uhjot")
+
+[node name="auto" parent="." instance=ExtResource("2_swsei")]

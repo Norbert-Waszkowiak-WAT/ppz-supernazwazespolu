@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd072kqtvb4gy"]
+
+[ext_resource type="Script" path="res://auto.gd" id="1_bn60o"]
+[ext_resource type="Texture2D" uid="uid://bnt3s0t3xxo51" path="res://auto3.png" id="2_npxmt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_57vvp"]
+radius = 3.54128
+height = 7.08256
+
+[node name="auto" type="CharacterBody2D"]
+script = ExtResource("1_bn60o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.14159
+scale = Vector2(1, 1.06)
+texture = ExtResource("2_npxmt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+scale = Vector2(11.3047, 26.174)
+shape = SubResource("CapsuleShape2D_57vvp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
