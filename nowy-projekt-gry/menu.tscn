@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpyic6wwlaeq7"]
+[gd_scene load_steps=5 format=3 uid="uid://cpyic6wwlaeq7"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_a451q"]
 [ext_resource type="Texture2D" uid="uid://bq2oogmrjsdx" path="res://wwww.png" id="2_ux28c"]
+[ext_resource type="FontFile" uid="uid://cm3kq23cd7dop" path="res://Bahiana-Regular.otf" id="3_nbpej"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qf30q"]
 bg_color = Color(0.0596424, 0.124486, 0.319789, 1)
@@ -25,25 +26,6 @@ grow_vertical = 2
 size_flags_vertical = 4
 script = ExtResource("1_a451q")
 
-[node name="opcje" type="Button" parent="."]
-z_index = 1
-layout_mode = 2
-offset_left = -150.0
-offset_top = -150.0
-offset_right = -96.0
-offset_bottom = -119.0
-text = "Opcje"
-
-[node name="wyjdź" type="Button" parent="."]
-light_mask = 7
-z_index = 1
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-offset_left = -155.0
-offset_top = -31.0
-offset_right = -101.0
-text = "Wyjdź"
-
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -1
 layout_mode = 1
@@ -60,23 +42,61 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_ux28c")
 
-[node name="graj" type="Button" parent="."]
-light_mask = 7
-z_index = 1
-layout_mode = 2
-offset_left = 18.0
-offset_top = -80.0
-offset_right = 220.0
-offset_bottom = 57.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -233.5
+offset_top = -175.0
+offset_right = 233.5
+offset_bottom = 175.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_font_sizes/font_size = 100
+theme_override_constants/separation = 10
+
+[node name="graj" type="Button" parent="VBoxContainer"]
+z_index = 1
+z_as_relative = false
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+theme_override_fonts/font = ExtResource("3_nbpej")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/hover = SubResource("StyleBoxFlat_qf30q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qf30q")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qf30q")
 text = "Graj"
 icon_alignment = 1
 
-[connection signal="pressed" from="opcje" to="." method="_on_opcje_pressed"]
-[connection signal="pressed" from="wyjdź" to="." method="_on_wyjdź_pressed"]
-[connection signal="pressed" from="graj" to="." method="_on_graj_pressed"]
+[node name="graj2" type="Button" parent="VBoxContainer"]
+z_index = 1
+z_as_relative = false
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+theme_override_fonts/font = ExtResource("3_nbpej")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_qf30q")
+text = "Opcje"
+
+[node name="graj3" type="Button" parent="VBoxContainer"]
+z_index = 1
+z_as_relative = false
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+theme_override_fonts/font = ExtResource("3_nbpej")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_qf30q")
+text = "Wyjście"
+
+[connection signal="pressed" from="VBoxContainer/graj" to="." method="_on_graj_pressed"]
+[connection signal="pressed" from="VBoxContainer/graj2" to="." method="_on_graj_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/graj3" to="." method="_on_graj_3_pressed"]
