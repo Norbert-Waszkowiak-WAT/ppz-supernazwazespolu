@@ -1,8 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpyic6wwlaeq7"]
+[gd_scene load_steps=6 format=3 uid="uid://cpyic6wwlaeq7"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_a451q"]
 [ext_resource type="Texture2D" uid="uid://bq2oogmrjsdx" path="res://wwww.png" id="2_ux28c"]
 [ext_resource type="FontFile" uid="uid://cm3kq23cd7dop" path="res://Bahiana-Regular.otf" id="3_nbpej"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1npn2"]
+bg_color = Color(0.123884, 0.206252, 0.629467, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qf30q"]
 bg_color = Color(0.0596424, 0.124486, 0.319789, 1)
@@ -67,13 +76,13 @@ size_flags_vertical = 2
 size_flags_stretch_ratio = 0.0
 theme_override_fonts/font = ExtResource("3_nbpej")
 theme_override_font_sizes/font_size = 80
-theme_override_styles/hover = SubResource("StyleBoxFlat_qf30q")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_qf30q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1npn2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1npn2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qf30q")
 text = "Graj"
 icon_alignment = 1
 
-[node name="graj2" type="Button" parent="VBoxContainer"]
+[node name="opcje" type="Button" parent="VBoxContainer"]
 z_index = 1
 z_as_relative = false
 layout_mode = 2
@@ -82,10 +91,13 @@ size_flags_vertical = 2
 size_flags_stretch_ratio = 0.0
 theme_override_fonts/font = ExtResource("3_nbpej")
 theme_override_font_sizes/font_size = 80
+theme_override_styles/hover = SubResource("StyleBoxFlat_1npn2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1npn2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qf30q")
-text = "Opcje"
+text = "opcje"
+icon_alignment = 1
 
-[node name="graj3" type="Button" parent="VBoxContainer"]
+[node name="wyjscie" type="Button" parent="VBoxContainer"]
 z_index = 1
 z_as_relative = false
 layout_mode = 2
@@ -94,9 +106,12 @@ size_flags_vertical = 2
 size_flags_stretch_ratio = 0.0
 theme_override_fonts/font = ExtResource("3_nbpej")
 theme_override_font_sizes/font_size = 80
+theme_override_styles/hover = SubResource("StyleBoxFlat_1npn2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1npn2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qf30q")
-text = "Wyjście"
+text = "wyjście"
+icon_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/graj" to="." method="_on_graj_pressed"]
-[connection signal="pressed" from="VBoxContainer/graj2" to="." method="_on_graj_2_pressed"]
-[connection signal="pressed" from="VBoxContainer/graj3" to="." method="_on_graj_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/opcje" to="." method="_on_opcje_pressed"]
+[connection signal="pressed" from="VBoxContainer/wyjscie" to="." method="_on_wyjscie_pressed"]

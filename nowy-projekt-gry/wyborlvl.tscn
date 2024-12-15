@@ -1,9 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqoak2524e0jf"]
+[gd_scene load_steps=5 format=3 uid="uid://cqoak2524e0jf"]
 
 [ext_resource type="Script" path="res://wyborlvl.gd" id="1_i4fwg"]
 [ext_resource type="FontFile" uid="uid://cm3kq23cd7dop" path="res://Bahiana-Regular.otf" id="2_oqtle"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dgxam"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xvxg"]
+bg_color = Color(0.123884, 0.206252, 0.629467, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhe6n"]
 bg_color = Color(0.0596424, 0.124486, 0.319789, 1)
 border_color = Color(0.947199, 0.947199, 0.947199, 1)
 corner_radius_top_left = 32
@@ -27,24 +36,22 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_i4fwg")
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="GridContainer2" type="GridContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -286.0
-offset_top = -217.0
-offset_right = 286.0
-offset_bottom = 217.0
+offset_left = -272.5
+offset_top = -184.0
+offset_right = 272.5
+offset_bottom = 184.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/h_separation = 15
-theme_override_constants/v_separation = 15
 columns = 2
 
-[node name="a" type="Button" parent="GridContainer"]
+[node name="graj" type="Button" parent="GridContainer2"]
 z_index = 1
 z_as_relative = false
 layout_mode = 2
@@ -53,11 +60,13 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 theme_override_fonts/font = ExtResource("2_oqtle")
 theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxFlat_dgxam")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8xvxg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8xvxg")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uhe6n")
 text = "poziom 1"
 icon_alignment = 1
 
-[node name="a2" type="Button" parent="GridContainer"]
+[node name="graj2" type="Button" parent="GridContainer2"]
 z_index = 1
 z_as_relative = false
 layout_mode = 2
@@ -66,11 +75,13 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 theme_override_fonts/font = ExtResource("2_oqtle")
 theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxFlat_dgxam")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8xvxg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8xvxg")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uhe6n")
 text = "poziom 2"
 icon_alignment = 1
 
-[node name="a3" type="Button" parent="GridContainer"]
+[node name="graj3" type="Button" parent="GridContainer2"]
 z_index = 1
 z_as_relative = false
 layout_mode = 2
@@ -79,11 +90,13 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 theme_override_fonts/font = ExtResource("2_oqtle")
 theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxFlat_dgxam")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8xvxg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8xvxg")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uhe6n")
 text = "poziom 3"
 icon_alignment = 1
 
-[node name="a4" type="Button" parent="GridContainer"]
+[node name="graj4" type="Button" parent="GridContainer2"]
 z_index = 1
 z_as_relative = false
 layout_mode = 2
@@ -92,11 +105,13 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 theme_override_fonts/font = ExtResource("2_oqtle")
 theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxFlat_dgxam")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8xvxg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8xvxg")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uhe6n")
 text = "poziom 4"
 icon_alignment = 1
 
-[node name="a5" type="Button" parent="GridContainer"]
+[node name="graj5" type="Button" parent="GridContainer2"]
 z_index = 1
 z_as_relative = false
 layout_mode = 2
@@ -105,11 +120,13 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 theme_override_fonts/font = ExtResource("2_oqtle")
 theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxFlat_dgxam")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8xvxg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8xvxg")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uhe6n")
 text = "poziom 5"
 icon_alignment = 1
 
-[node name="a6" type="Button" parent="GridContainer"]
+[node name="graj6" type="Button" parent="GridContainer2"]
 z_index = 1
 z_as_relative = false
 layout_mode = 2
@@ -118,9 +135,11 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 theme_override_fonts/font = ExtResource("2_oqtle")
 theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxFlat_dgxam")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8xvxg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8xvxg")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uhe6n")
 text = "wyjście"
 icon_alignment = 1
 
-[connection signal="pressed" from="GridContainer/a" to="." method="_on_a_pressed"]
-[connection signal="pressed" from="GridContainer/a6" to="." method="_on_a_6_pressed"]
+[connection signal="pressed" from="GridContainer2/graj" to="." method="_on_graj_pressed"]
+[connection signal="pressed" from="GridContainer2/graj6" to="." method="_on_graj_6_pressed"]

@@ -6,11 +6,12 @@
 [node name="gra" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 581.0
+offset_bottom = 392.0
 scale = Vector2(3.3063, 2.75404)
 texture = ExtResource("1_uhjot")
 
 [node name="auto" parent="." instance=ExtResource("2_swsei")]
+position = Vector2(958, 545)
 
 [node name="Camera2D" type="Camera2D" parent="auto"]
