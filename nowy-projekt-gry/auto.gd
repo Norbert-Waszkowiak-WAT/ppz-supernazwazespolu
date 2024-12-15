@@ -63,3 +63,7 @@ func move_vehicle(delta):
 
 	# Przesunięcie pojazdu
 	move_and_collide(movement)
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	queue_free()
