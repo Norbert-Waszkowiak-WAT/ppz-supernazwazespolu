@@ -71,3 +71,9 @@ Grupą docelową są osoby zainteresowane nauką i doskonaleniem umiejętności 
 **Narzędzia:**  
 
 - Git (kontrola wersji)
+
+![image](https://github.com/user-attachments/assets/ab0af2d1-fabf-4e48-ab23-0a6ab7a46a84)
+![image](https://github.com/user-attachments/assets/46509e6f-1357-42cc-883e-c5717b838a73)
+![image](https://github.com/user-attachments/assets/6be3d07e-9b4e-4ce4-adfa-f094d18b42a6)
+
+
