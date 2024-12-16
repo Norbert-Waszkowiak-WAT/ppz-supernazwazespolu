@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqfnci06sopd3"]
+[gd_scene load_steps=7 format=3 uid="uid://bqfnci06sopd3"]
 
+[ext_resource type="Script" path="res://gra.gd" id="1_bawpf"]
 [ext_resource type="Texture2D" uid="uid://bm6f11woirxy8" path="res://parking.png" id="1_uhjot"]
 [ext_resource type="PackedScene" uid="uid://bd072kqtvb4gy" path="res://auto.tscn" id="2_swsei"]
 [ext_resource type="Texture2D" uid="uid://vytcbnhfe8dp" path="res://tree.png" id="3_ovsjn"]
@@ -7,7 +8,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8y5mv"]
 size = Vector2(314, 298)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3h58d"]
+bg_color = Color(9.62615e-08, 0.142637, 0.419396, 1)
+
 [node name="gra" type="Node2D"]
+script = ExtResource("1_bawpf")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 581.0
@@ -33,4 +38,14 @@ position = Vector2(1346, 546)
 scale = Vector2(0.856322, 0.847701)
 texture = ExtResource("3_ovsjn")
 
+[node name="Button" type="Button" parent="."]
+offset_left = 1687.0
+offset_top = 16.0
+offset_right = 1901.0
+offset_bottom = 141.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_3h58d")
+text = "powrót
+"
+
 [connection signal="body_entered" from="Area2D" to="auto" method="_on_area_2d_body_entered"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
