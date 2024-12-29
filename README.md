@@ -2,7 +2,7 @@
 
 "Symulator Parkowania" 
 
-Prosta i intuicyjna gra mobilna, będąca symulatorem parkowania, która pozwala użytkownikom doskonalić umiejętności manewrowania i parkowania pojazdów w różnych środowiskach i poziomach trudności. 
+Prosta i intuicyjna gra, będąca symulatorem parkowania, która pozwala użytkownikom doskonalić umiejętności manewrowania i parkowania pojazdów w różnych środowiskach i poziomach trudności. 
 
 **2. Skład zespołu** 
 
