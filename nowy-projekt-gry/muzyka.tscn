@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0tvxc8qpgxot"]
+
+[ext_resource type="AudioStream" uid="uid://c4wa5u67g0jb6" path="res://dźwięki/710122__jghoffman418__friendly-80bpm-bmin.wav" id="1_qt4w6"]
+[ext_resource type="Script" path="res://muzyka.gd" id="1_s6dho"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s6dho")
+
+[node name="muzyka" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_qt4w6")
+autoplay = true
