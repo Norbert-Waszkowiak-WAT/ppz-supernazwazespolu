@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://bqfnci06sopd3"]
 
 [ext_resource type="Script" path="res://gra.gd" id="1_bawpf"]
-[ext_resource type="Texture2D" uid="uid://bm6f11woirxy8" path="res://parking.png" id="1_uhjot"]
+[ext_resource type="Texture2D" uid="uid://bm6f11woirxy8" path="res://grafiki pozostałe/parking.png" id="1_uhjot"]
 [ext_resource type="PackedScene" uid="uid://bd072kqtvb4gy" path="res://auto.tscn" id="2_swsei"]
-[ext_resource type="Texture2D" uid="uid://vytcbnhfe8dp" path="res://tree.png" id="3_ovsjn"]
+[ext_resource type="Texture2D" uid="uid://vytcbnhfe8dp" path="res://grafiki pozostałe/tree.png" id="3_ovsjn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8y5mv"]
 size = Vector2(314, 298)

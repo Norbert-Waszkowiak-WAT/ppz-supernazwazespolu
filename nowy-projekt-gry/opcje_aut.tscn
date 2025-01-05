@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://186middgfqrd"]
+
+[ext_resource type="Script" path="res://opcje_aut.gd" id="1_ia8lm"]
+[ext_resource type="FontFile" uid="uid://cm3kq23cd7dop" path="res://Bahiana-Regular.otf" id="2_yw46o"]
+
+[sub_resource type="Theme" id="Theme_1a1kq"]
+
+[node name="Opcje aut" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 475.0
+offset_top = 252.0
+offset_right = -428.0
+offset_bottom = -213.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ia8lm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 159.0
+offset_bottom = 40.0
+
+[node name="Wybierz samochód" type="Label" parent="."]
+layout_mode = 0
+offset_left = -25.0
+offset_right = 40.0
+offset_bottom = 43.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 428.0
+offset_top = 257.0
+offset_right = 690.0
+offset_bottom = 473.0
+
+[node name="wybierz" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="poprzedni" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("2_yw46o")
+theme_override_font_sizes/font_size = 80
+action_mode = 0
+text = "Poprzedni"
+icon_alignment = 1
+
+[node name="nastepny" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_1a1kq")
+theme_type_variation = &"FlatButton"
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_yw46o")
+theme_override_font_sizes/font_size = 80
+text = "Następny"
+
+[connection signal="pressed" from="VBoxContainer/wybierz" to="." method="_on_wybierz_pressed"]
+[connection signal="pressed" from="VBoxContainer/poprzedni" to="." method="_on_poprzedni_pressed"]
+[connection signal="pressed" from="VBoxContainer/nastepny" to="." method="_on_nastepny_pressed"]
