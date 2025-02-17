@@ -11,6 +11,8 @@ extends CharacterBody2D
 # Flaga określająca aktywność pojazdu
 @export var is_active = true
 
+var start_position: Vector2  # Pozycja startowa auta
+
 # Zmienna dla prędkości i kierunku skrętu
 var speed = 0
 var steer_direction = 0
@@ -23,6 +25,10 @@ func _ready() -> void:
 	# Zapisanie początkowej pozycji i rotacji
 	spawn_position = global_position
 	spawn_rotation = rotation
+func _on_body_entered(body):
+	if body.is_in_group("Bariera"):# Jeśli auto uderzy w barierę
+		global_position = start_position
+
 
 func _physics_process(delta: float) -> void:
 	if is_active:
@@ -91,3 +97,4 @@ func reset_car() -> void:
 	rotation = spawn_rotation
 	speed = 0
 	steer_direction = 0
+	

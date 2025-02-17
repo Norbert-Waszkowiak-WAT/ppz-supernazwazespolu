@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqfnci06sopd3"]
+[gd_scene load_steps=9 format=3 uid="uid://bqfnci06sopd3"]
 
 [ext_resource type="Script" path="res://gra.gd" id="1_bawpf"]
 [ext_resource type="Texture2D" uid="uid://bm6f11woirxy8" path="res://grafiki pozostałe/parking.png" id="1_uhjot"]
@@ -11,6 +11,12 @@ size = Vector2(314, 298)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3h58d"]
 bg_color = Color(9.62615e-08, 0.142637, 0.419396, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xs48"]
+size = Vector2(1920.5, 59.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmy3m"]
+size = Vector2(106, 1128)
+
 [node name="gra" type="Node2D"]
 script = ExtResource("1_bawpf")
 
@@ -21,7 +27,7 @@ scale = Vector2(3.3063, 2.75404)
 texture = ExtResource("1_uhjot")
 
 [node name="auto" parent="." instance=ExtResource("2_swsei")]
-position = Vector2(958, 545)
+position = Vector2(363, 553)
 
 [node name="Camera2D" type="Camera2D" parent="auto"]
 
@@ -39,13 +45,37 @@ scale = Vector2(0.856322, 0.847701)
 texture = ExtResource("3_ovsjn")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 1687.0
-offset_top = 16.0
-offset_right = 1901.0
-offset_bottom = 141.0
+offset_left = 1810.0
+offset_top = 9.0
+offset_right = 1910.0
+offset_bottom = 59.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_3h58d")
 text = "powrót
 "
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Bariera"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(960.75, -29.75)
+shape = SubResource("RectangleShape2D_7xs48")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." groups=["Bariera"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(960, 1109)
+shape = SubResource("RectangleShape2D_7xs48")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." groups=["Bariera"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-54, 564)
+shape = SubResource("RectangleShape2D_cmy3m")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." groups=["Bariera"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(1975, 563)
+shape = SubResource("RectangleShape2D_cmy3m")
 
 [connection signal="body_entered" from="Area2D" to="auto" method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
