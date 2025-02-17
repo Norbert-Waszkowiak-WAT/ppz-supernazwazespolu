@@ -68,3 +68,4 @@ text = "POWRÓT"
 [connection signal="pressed" from="VBoxContainer/wybierz" to="." method="_on_wybierz_pressed"]
 [connection signal="pressed" from="VBoxContainer/poprzedni" to="." method="_on_poprzedni_pressed"]
 [connection signal="pressed" from="VBoxContainer/nastepny" to="." method="_on_nastepny_pressed"]
+[connection signal="pressed" from="VBoxContainer/powrót" to="." method="_on_powrót_pressed"]

@@ -46,6 +46,5 @@ func _on_nastepny_button_pressed():
 
 
 
-
 func _on_powrót_pressed() -> void:
 	get_tree().change_scene_to_file("res://menu.tscn")
