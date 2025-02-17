@@ -7,7 +7,7 @@
 radius = 3.54128
 height = 7.08256
 
-[node name="auto" type="CharacterBody2D"]
+[node name="auto" type="CharacterBody2D" groups=["car"]]
 script = ExtResource("1_bn60o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
