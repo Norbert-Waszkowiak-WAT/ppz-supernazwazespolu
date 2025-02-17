@@ -43,5 +43,9 @@ func _on_nastepny_button_pressed():
 		current_index = 0
 	update_character_display()
 
-func _on_wybierz_pressed() -> void:
-	get_tree().change_scene_to_file("res://wyborlvl.tscn")
+
+
+
+
+func _on_powrót_pressed() -> void:
+	get_tree().change_scene_to_file("res://menu.tscn")
