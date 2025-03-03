@@ -17,3 +17,7 @@ func _on_button_pressed() -> void:
 
 func _on_timer_timeout() -> void:
 	pass # Replace with function body.
+
+
+func _on_parking_1_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

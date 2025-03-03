@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqoak2524e0jf"]
+[gd_scene load_steps=6 format=3 uid="uid://cqoak2524e0jf"]
 
 [ext_resource type="Script" path="res://wyborlvl.gd" id="1_i4fwg"]
 [ext_resource type="FontFile" uid="uid://cm3kq23cd7dop" path="res://Bahiana-Regular.otf" id="2_oqtle"]
+[ext_resource type="AudioStream" uid="uid://c4wa5u67g0jb6" path="res://dźwięki/710122__jghoffman418__friendly-80bpm-bmin.wav" id="3_vqx3o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xvxg"]
 bg_color = Color(0.123884, 0.206252, 0.629467, 1)
@@ -140,6 +141,10 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_8xvxg")
 theme_override_styles/normal = SubResource("StyleBoxFlat_uhe6n")
 text = "wyjście"
 icon_alignment = 1
+
+[node name="muzyka" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_vqx3o")
+autoplay = true
 
 [connection signal="pressed" from="GridContainer2/graj" to="." method="_on_graj_pressed"]
 [connection signal="pressed" from="GridContainer2/graj6" to="." method="_on_graj_6_pressed"]
