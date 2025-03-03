@@ -20,4 +20,4 @@ func _on_timer_timeout() -> void:
 
 
 func _on_parking_1_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+		get_tree().change_scene_to_file("res://gra2.tscn")

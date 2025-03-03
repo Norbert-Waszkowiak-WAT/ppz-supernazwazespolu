@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://sydbraucsiqx"]
+
+[ext_resource type="Texture2D" uid="uid://cv7oh644qb5ox" path="res://grafiki pozostałe/parking 2.jpg" id="1_l1s56"]
+
+[node name="gra2" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 12.0
+offset_top = -35.0
+offset_right = 1444.0
+offset_bottom = 1021.0
+texture = ExtResource("1_l1s56")
