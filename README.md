@@ -76,4 +76,39 @@ Grupą docelową są osoby zainteresowane nauką i doskonaleniem umiejętności 
 ![image](https://github.com/user-attachments/assets/46509e6f-1357-42cc-883e-c5717b838a73)
 ![image](https://github.com/user-attachments/assets/6be3d07e-9b4e-4ce4-adfa-f094d18b42a6)
 
+**6. Harmonogram prac dla 4 etapów – Gra Parkingowa  **
+
+**Etap 1: Tworzenie podstawowych scen gry**  
+**Zadania:**  
+- **Stworzenie sceny menu głównego** – Michał Grzęda  
+- **Implementacja wyboru poziomów** – Oliwia Mikucka  
+- **Scena zmiany kolorów auta** – Maciej Wargowski  
+- **Stworzenie sceny z autem i parkingiem** – Michał Grzęda  
+- **Dodanie kolizji (bariery na brzegach mapy)** – Oliwia Mikucka  
+- **Obiekt resetujący pozycję auta przy kolizji** – Michał Grzęda 
+- **Dodanie muzyki do gry** – Maciej Wargowski  
+
+#### **Etap 2: Rozbudowa funkcjonalności i mechanik gry**  
+**Zadania:**  
+- **Udoskonalenie sterowania pojazdem** – Michał Grzęda  
+- **Poprawa systemu kolizji (np. lepsza detekcja błędów)** – Oliwia Mikucka  
+- **Animacje i efekty dźwiękowe (np. dźwięk uderzenia w przeszkodę)** – Maciej Wargowski  
+- **Optymalizacja sceny gry (np. poprawa wydajności)** – Oliwia Mikucka  
+- **Testowanie stabilności i poprawa błędów** – Michał Grzęda  
+
+**Etap 3: Dodanie poziomów i nowych wyzwań**  
+**Zadania:**  
+- **Implementacja nowych poziomów o różnym stopniu trudności** – Michał Grzęda  
+- **Dodanie przeszkód na parkingu (np. inne pojazdy, słupki)** – Oliwia Mikucka  
+- **Wprowadzenie systemu oceniania parkowania (np. gwiazdki, czas, dokładność)** – Maciej Wargowski  
+- **Testowanie poziomów i balansu rozgrywki** – Michał Grzęda  
+
+**Etap 4: Finalizacja gry i dodatkowe funkcje**  
+**Zadania:**  
+- **Dodanie timera i systemu wyzwań (np. zaparkuj w 30 sekund)** – Michał Grzęda  
+- **Integracja systemu powiadomień (np. komunikaty o błędach parkowania)** – Oliwia Mikucka  
+- **Stworzenie tabeli wyników i zapis osiągnięć graczy** – Maciej Wargowski  
+- **Optymalizacja końcowa i poprawa ewentualnych błędów** – Oliwia Mikucka  
+- **Ostateczne testy i przygotowanie do publikacji** – Michał Grzęda  
+ 🚗💨
 
