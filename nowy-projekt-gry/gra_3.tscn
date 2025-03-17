@@ -1,11 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bqfnci06sopd3"]
+[gd_scene load_steps=12 format=3 uid="uid://b5qx3nq7lis31"]
 
-[ext_resource type="Script" path="res://gra.gd" id="1_bawpf"]
-[ext_resource type="Texture2D" uid="uid://bm6f11woirxy8" path="res://grafiki pozostałe/parking.png" id="1_uhjot"]
-[ext_resource type="PackedScene" uid="uid://bd072kqtvb4gy" path="res://auto.tscn" id="2_swsei"]
-[ext_resource type="Texture2D" uid="uid://vytcbnhfe8dp" path="res://grafiki pozostałe/tree.png" id="3_ovsjn"]
-[ext_resource type="AudioStream" uid="uid://c4wa5u67g0jb6" path="res://dźwięki/710122__jghoffman418__friendly-80bpm-bmin.wav" id="5_r4bnk"]
-[ext_resource type="Script" path="res://parking1.gd" id="6_a3itt"]
+[ext_resource type="Script" path="res://gra.gd" id="1_drh2f"]
+[ext_resource type="Texture2D" uid="uid://bm6f11woirxy8" path="res://grafiki pozostałe/parking.png" id="2_jab00"]
+[ext_resource type="PackedScene" uid="uid://bd072kqtvb4gy" path="res://auto.tscn" id="3_elo65"]
+[ext_resource type="Texture2D" uid="uid://vytcbnhfe8dp" path="res://grafiki pozostałe/tree.png" id="4_f1b1t"]
+[ext_resource type="AudioStream" uid="uid://c4wa5u67g0jb6" path="res://dźwięki/710122__jghoffman418__friendly-80bpm-bmin.wav" id="5_g4oap"]
+[ext_resource type="Script" path="res://parking1.gd" id="6_q4kux"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8y5mv"]
 size = Vector2(203, 207)
@@ -22,16 +22,17 @@ size = Vector2(106, 1128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwsqt"]
 size = Vector2(73, 63)
 
-[node name="gra" type="Node2D"]
-script = ExtResource("1_bawpf")
+[node name="gra_3" type="Node2D"]
+position = Vector2(0, 1)
+script = ExtResource("1_drh2f")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 581.0
 offset_bottom = 392.0
 scale = Vector2(3.3063, 2.75404)
-texture = ExtResource("1_uhjot")
+texture = ExtResource("2_jab00")
 
-[node name="auto" parent="." instance=ExtResource("2_swsei")]
+[node name="auto" parent="." instance=ExtResource("3_elo65")]
 position = Vector2(363, 553)
 
 [node name="Camera2D" type="Camera2D" parent="auto"]
@@ -41,13 +42,13 @@ position = Vector2(363, 553)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(1352, 545)
+position = Vector2(568.5, 849.5)
 shape = SubResource("RectangleShape2D_8y5mv")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(1356, 553)
-scale = Vector2(0.556035, 0.586207)
-texture = ExtResource("3_ovsjn")
+position = Vector2(568, 848)
+scale = Vector2(0.548851, 0.538075)
+texture = ExtResource("4_f1b1t")
 
 [node name="Button" type="Button" parent="."]
 offset_left = 1810.0
@@ -83,16 +84,30 @@ position = Vector2(1975, 563)
 shape = SubResource("RectangleShape2D_cmy3m")
 
 [node name="muzyka" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_r4bnk")
+stream = ExtResource("5_g4oap")
 autoplay = true
 
 [node name="parking1" type="Area2D" parent="."]
-script = ExtResource("6_a3itt")
+script = ExtResource("6_q4kux")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="parking1"]
 position = Vector2(771.5, 251.5)
 shape = SubResource("RectangleShape2D_uwsqt")
 
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(988, 854)
+shape = SubResource("RectangleShape2D_8y5mv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
+position = Vector2(981.5, 855.625)
+scale = Vector2(0.560345, 0.56681)
+texture = ExtResource("4_f1b1t")
+
 [connection signal="body_entered" from="Area2D" to="auto" method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="body_entered" from="parking1" to="." method="_on_parking_1_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="auto" method="_on_area_2d_body_entered"]

@@ -147,4 +147,6 @@ stream = ExtResource("3_vqx3o")
 autoplay = true
 
 [connection signal="pressed" from="GridContainer2/graj" to="." method="_on_graj_pressed"]
+[connection signal="pressed" from="GridContainer2/graj2" to="." method="_on_graj_2_pressed"]
+[connection signal="pressed" from="GridContainer2/graj3" to="." method="_on_graj_3_pressed"]
 [connection signal="pressed" from="GridContainer2/graj6" to="." method="_on_graj_6_pressed"]
