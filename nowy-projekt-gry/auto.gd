@@ -1,34 +1,23 @@
 extends CharacterBody2D
 
 # Parametry pojazdu
-@export var steering_angle = 90  # Maksymalny kąt skrętu (w stopniach)
-@export var engine_power = 700  # Moc silnika (przyspieszenie)
-@export var max_speed = 400  # Maksymalna prędkość
-@export var braking_power = 700  # Siła hamowania
-@export var friction = 400  # Współczynnik tarcia (spowalnia pojazd)
-@export var reverse_speed_limit = -400  # Maksymalna prędkość wsteczna
+@export var steering_angle = 90
+@export var engine_power = 700
+@export var max_speed = 400
+@export var braking_power = 700
+@export var friction = 400
+@export var reverse_speed_limit = -400
 
-# Flaga określająca aktywność pojazdu
 @export var is_active = true
 
-var start_position: Vector2  # Pozycja startowa auta
-
-# Zmienna dla prędkości i kierunku skrętu
 var speed = 0
 var steer_direction = 0
-
-# Pozycja i rotacja początkowa
 var spawn_position: Vector2
 var spawn_rotation: float
 
 func _ready() -> void:
-	# Zapisanie początkowej pozycji i rotacji
 	spawn_position = global_position
 	spawn_rotation = rotation
-func _on_body_entered(body):
-	if body.is_in_group("Bariera"):# Jeśli auto uderzy w barierę
-		global_position = start_position
-
 
 func _physics_process(delta: float) -> void:
 	if is_active:
@@ -36,7 +25,6 @@ func _physics_process(delta: float) -> void:
 		apply_friction(delta)
 		move_vehicle(delta)
 
-# Funkcja obsługująca wejście użytkownika
 func handle_input(delta: float) -> void:
 	if Input.is_action_pressed("ui_left"):
 		steer_direction = -deg_to_rad(steering_angle)
@@ -50,10 +38,8 @@ func handle_input(delta: float) -> void:
 	elif Input.is_action_pressed("ui_down"):
 		speed -= braking_power * delta
 
-	# Ograniczenie prędkości
 	speed = clamp(speed, reverse_speed_limit, max_speed)
 
-# Zastosowanie tarcia do stopniowego zmniejszania prędkości
 func apply_friction(delta: float) -> void:
 	if speed > 0:
 		speed -= friction * delta
@@ -64,7 +50,6 @@ func apply_friction(delta: float) -> void:
 		if speed > 0:
 			speed = 0
 
-# Ruch pojazdu na podstawie prędkości i kierunku
 func move_vehicle(delta: float) -> void:
 	if speed != 0:
 		rotation += steer_direction * (speed / max_speed) * delta
@@ -73,28 +58,29 @@ func move_vehicle(delta: float) -> void:
 	var movement = direction * speed * delta
 	move_and_collide(movement)
 
-# Funkcja obsługująca kolizje
+# 🚗 Kolizja z przeszkodą
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	is_active = false  # Dezaktywuj sterowanie
-	$Sprite2D.visible = false  # Ukryj samochód
+	# Odtwarzanie dźwięku kolizji
+	if $CollisionSound:
+		$CollisionSound.play()
 
-	# Tworzenie i czekanie na timer
+	is_active = false
+	$Sprite2D.visible = false
+
 	var timer = Timer.new()
-	timer.wait_time = 1.0  # Czas odrodzenia: 1 sekunda
-	timer.one_shot = true  # Timer działa tylko raz
+	timer.wait_time = 1.0
+	timer.one_shot = true
 	add_child(timer)
 	timer.start()
-	await timer.timeout  # Czekaj na zakończenie timera
-	timer.queue_free()  # Usuń timer po użyciu
+	await timer.timeout
+	timer.queue_free()
 
-	reset_car()  # Zresetuj pozycję samochodu
-	$Sprite2D.visible = true  # Pokaż samochód
-	is_active = true  # Aktywuj sterowanie
+	reset_car()
+	$Sprite2D.visible = true
+	is_active = true
 
-# Funkcja resetowania pojazdu
 func reset_car() -> void:
 	global_position = spawn_position
 	rotation = spawn_rotation
 	speed = 0
 	steer_direction = 0
-	

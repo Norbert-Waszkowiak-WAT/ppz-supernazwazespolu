@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bd072kqtvb4gy"]
+[gd_scene load_steps=5 format=3 uid="uid://bd072kqtvb4gy"]
 
 [ext_resource type="Script" path="res://auto.gd" id="1_bn60o"]
 [ext_resource type="Texture2D" uid="uid://bnt3s0t3xxo51" path="res://auta/auto3.png" id="2_npxmt"]
+[ext_resource type="AudioStream" uid="uid://1sya23dhtsnk" path="res://dźwięki/70938__guitarguy1985__police2.wav" id="3_ct4k7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_57vvp"]
 radius = 3.54128
@@ -10,7 +11,7 @@ height = 7.08256
 [node name="AutoSprite" type="CharacterBody2D" groups=["car"]]
 script = ExtResource("1_bn60o")
 
-[node name="AutoSprite" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 3.14159
 scale = Vector2(0.2, 0.212)
 texture = ExtResource("2_npxmt")
@@ -19,3 +20,7 @@ texture = ExtResource("2_npxmt")
 rotation = 1.5708
 scale = Vector2(11.3047, 26.174)
 shape = SubResource("CapsuleShape2D_57vvp")
+
+[node name="CollisionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ct4k7")
+volume_db = 5.943
