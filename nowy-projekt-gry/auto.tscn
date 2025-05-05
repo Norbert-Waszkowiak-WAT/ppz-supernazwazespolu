@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd072kqtvb4gy"]
+[gd_scene load_steps=6 format=3 uid="uid://bd072kqtvb4gy"]
 
 [ext_resource type="Script" path="res://auto.gd" id="1_bn60o"]
 [ext_resource type="Texture2D" uid="uid://bnt3s0t3xxo51" path="res://auta/auto3.png" id="2_npxmt"]
@@ -7,6 +7,33 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_57vvp"]
 radius = 3.54128
 height = 7.08256
+
+[sub_resource type="FontFile" id="FontFile_582py"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/400/0/ascent = 0.0
+cache/0/400/0/descent = 0.0
+cache/0/400/0/underline_position = 0.0
+cache/0/400/0/underline_thickness = 0.0
+cache/0/400/0/scale = 1.0
+cache/0/100/0/ascent = 0.0
+cache/0/100/0/descent = 0.0
+cache/0/100/0/underline_position = 0.0
+cache/0/100/0/underline_thickness = 0.0
+cache/0/100/0/scale = 1.0
+cache/0/150/0/ascent = 0.0
+cache/0/150/0/descent = 0.0
+cache/0/150/0/underline_position = 0.0
+cache/0/150/0/underline_thickness = 0.0
+cache/0/150/0/scale = 1.0
 
 [node name="AutoSprite" type="CharacterBody2D" groups=["car"]]
 script = ExtResource("1_bn60o")
@@ -24,3 +51,14 @@ shape = SubResource("CapsuleShape2D_57vvp")
 [node name="CollisionSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ct4k7")
 volume_db = 5.943
+
+[node name="CollisionLabel" type="Label" parent="."]
+offset_left = -29.0
+offset_top = -10.0
+offset_right = 11.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_582py")
+theme_override_font_sizes/font_size = 150
+horizontal_alignment = 1
+vertical_alignment = 1

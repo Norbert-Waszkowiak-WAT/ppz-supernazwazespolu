@@ -82,7 +82,6 @@ Grupą docelową są osoby zainteresowane nauką i doskonaleniem umiejętności 
 **Zadania:**  
 - **Stworzenie sceny menu głównego** – Michał Grzęda  
 - **Implementacja wyboru poziomów** – Oliwia Mikucka  
-- **Scena zmiany kolorów auta** – Maciej Wargowski  
 - **Stworzenie sceny z autem i parkingiem** – Michał Grzęda  
 - **Dodanie kolizji (bariery na brzegach mapy)** – Oliwia Mikucka  
 - **Obiekt resetujący pozycję auta przy kolizji** – Michał Grzęda 

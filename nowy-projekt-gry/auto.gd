@@ -7,7 +7,6 @@ extends CharacterBody2D
 @export var braking_power = 700
 @export var friction = 400
 @export var reverse_speed_limit = -400
-
 @export var is_active = true
 
 var speed = 0
@@ -18,6 +17,10 @@ var spawn_rotation: float
 func _ready() -> void:
 	spawn_position = global_position
 	spawn_rotation = rotation
+
+	# Ustawiamy z_index etykiety na początkową wartość
+	if $CollisionLabel:
+		$CollisionLabel.z_index = 10  # Możesz zmienić wartość, by była wyświetlana na wierzchu
 
 func _physics_process(delta: float) -> void:
 	if is_active:
@@ -60,9 +63,16 @@ func move_vehicle(delta: float) -> void:
 
 # 🚗 Kolizja z przeszkodą
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	# Odtwarzanie dźwięku kolizji
 	if $CollisionSound:
 		$CollisionSound.play()
+
+	# 🔔 Pokaż komunikat "Kolizja"
+	if $CollisionLabel:
+		$CollisionLabel.text = "Kolizja!"
+		$CollisionLabel.visible = true
+
+		# Ustawiamy z_index, aby etykieta była na wierzchu
+		$CollisionLabel.z_index = 100  # Możesz zmienić wartość, jeśli jest potrzeba
 
 	is_active = false
 	$Sprite2D.visible = false
@@ -74,6 +84,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	timer.start()
 	await timer.timeout
 	timer.queue_free()
+
+	# ❌ Ukryj komunikat po czasie
+	if $CollisionLabel:
+		$CollisionLabel.visible = false
+		$CollisionLabel.text = ""
 
 	reset_car()
 	$Sprite2D.visible = true
