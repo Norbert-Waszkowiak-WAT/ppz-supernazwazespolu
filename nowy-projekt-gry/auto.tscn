@@ -7,10 +7,10 @@
 radius = 3.54128
 height = 7.08256
 
-[node name="auto" type="CharacterBody2D" groups=["car"]]
+[node name="AutoSprite" type="CharacterBody2D" groups=["car"]]
 script = ExtResource("1_bn60o")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AutoSprite" type="Sprite2D" parent="."]
 rotation = 3.14159
 scale = Vector2(0.2, 0.212)
 texture = ExtResource("2_npxmt")

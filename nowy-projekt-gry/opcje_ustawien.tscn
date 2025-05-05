@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://co8yqku5bd0nx"]
+[gd_scene load_steps=5 format=3 uid="uid://co8yqku5bd0nx"]
 
 [ext_resource type="Script" path="res://opcje_ustawien.gd" id="1_wnufs"]
 [ext_resource type="FontFile" uid="uid://cm3kq23cd7dop" path="res://Bahiana-Regular.otf" id="2_c3h51"]
 [ext_resource type="StyleBox" uid="uid://bvcwkuby48wpc" path="res://opcje_ustawien.tres" id="3_b3gy0"]
-[ext_resource type="AudioStream" uid="uid://c4wa5u67g0jb6" path="res://dźwięki/710122__jghoffman418__friendly-80bpm-bmin.wav" id="4_stpqj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dl2ll"]
 bg_color = Color(0.0596424, 0.124486, 0.319789, 1)
@@ -41,21 +40,6 @@ offset_bottom = 231.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="graj1" type="Button" parent="VBoxContainer"]
-z_index = 1
-z_as_relative = false
-layout_mode = 2
-size_flags_horizontal = 5
-size_flags_vertical = 2
-size_flags_stretch_ratio = 0.0
-theme_override_fonts/font = ExtResource("2_c3h51")
-theme_override_font_sizes/font_size = 80
-theme_override_styles/hover = ExtResource("3_b3gy0")
-theme_override_styles/pressed = ExtResource("3_b3gy0")
-theme_override_styles/normal = SubResource("StyleBoxFlat_dl2ll")
-text = "wybierz"
-icon_alignment = 1
-
 [node name="graj2" type="Button" parent="VBoxContainer"]
 z_index = 1
 z_as_relative = false
@@ -71,10 +55,4 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_dl2ll")
 text = "cofnij"
 icon_alignment = 1
 
-[node name="muzyka" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(-171, -105)
-stream = ExtResource("4_stpqj")
-autoplay = true
-
-[connection signal="pressed" from="VBoxContainer/graj1" to="." method="_on_graj_1_pressed"]
 [connection signal="pressed" from="VBoxContainer/graj2" to="." method="_on_graj_2_pressed"]

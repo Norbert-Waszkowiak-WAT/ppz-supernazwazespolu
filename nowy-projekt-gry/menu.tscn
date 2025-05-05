@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpyic6wwlaeq7"]
+[gd_scene load_steps=6 format=3 uid="uid://cpyic6wwlaeq7"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_a451q"]
 [ext_resource type="Texture2D" uid="uid://bq2oogmrjsdx" path="res://grafiki pozostałe/wwww.png" id="2_ux28c"]
 [ext_resource type="FontFile" uid="uid://cm3kq23cd7dop" path="res://Bahiana-Regular.otf" id="3_nbpej"]
-[ext_resource type="AudioStream" uid="uid://c4wa5u67g0jb6" path="res://dźwięki/710122__jghoffman418__friendly-80bpm-bmin.wav" id="4_c58sd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1npn2"]
 bg_color = Color(0.123884, 0.206252, 0.629467, 1)
@@ -112,10 +111,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_1npn2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qf30q")
 text = "wyjście"
 icon_alignment = 1
-
-[node name="muzyka" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_c58sd")
-autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/graj" to="." method="_on_graj_pressed"]
 [connection signal="pressed" from="VBoxContainer/opcje" to="." method="_on_opcje_pressed"]

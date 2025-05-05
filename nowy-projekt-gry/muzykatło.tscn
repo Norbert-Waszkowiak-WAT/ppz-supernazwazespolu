@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://tyogu1y2t4sr"]
+
+[ext_resource type="AudioStream" uid="uid://x18duymv7e4n" path="res://dźwięki/BHZb26rZFpiA.128.mp3" id="1_khnga"]
+
+[node name="Muzyka tło" type="Node"]
+
+[node name="Player" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_khnga")
+volume_db = -15.848
+pitch_scale = 1.11
+autoplay = true
+parameters/looping = true

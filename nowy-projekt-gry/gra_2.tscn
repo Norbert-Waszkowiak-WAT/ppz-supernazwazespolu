@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cisbqi1eok0vk"]
+[gd_scene load_steps=11 format=3 uid="uid://cisbqi1eok0vk"]
 
 [ext_resource type="Script" path="res://gra.gd" id="1_m644l"]
 [ext_resource type="Texture2D" uid="uid://bm6f11woirxy8" path="res://grafiki pozostałe/parking.png" id="2_2eu8e"]
 [ext_resource type="PackedScene" uid="uid://bd072kqtvb4gy" path="res://auto.tscn" id="3_ceisr"]
 [ext_resource type="Texture2D" uid="uid://vytcbnhfe8dp" path="res://grafiki pozostałe/tree.png" id="4_iyj5y"]
-[ext_resource type="AudioStream" uid="uid://c4wa5u67g0jb6" path="res://dźwięki/710122__jghoffman418__friendly-80bpm-bmin.wav" id="5_grxck"]
 [ext_resource type="Script" path="res://parking1.gd" id="6_hqppi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8y5mv"]
@@ -82,10 +81,6 @@ shape = SubResource("RectangleShape2D_cmy3m")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 position = Vector2(1975, 563)
 shape = SubResource("RectangleShape2D_cmy3m")
-
-[node name="muzyka" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_grxck")
-autoplay = true
 
 [node name="parking1" type="Area2D" parent="."]
 script = ExtResource("6_hqppi")

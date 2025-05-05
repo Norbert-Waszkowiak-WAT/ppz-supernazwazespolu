@@ -1,9 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://186middgfqrd"]
+[gd_scene load_steps=3 format=3 uid="uid://186middgfqrd"]
 
 [ext_resource type="Script" path="res://opcje_aut.gd" id="1_ia8lm"]
 [ext_resource type="FontFile" uid="uid://cm3kq23cd7dop" path="res://Bahiana-Regular.otf" id="2_yw46o"]
-
-[sub_resource type="Theme" id="Theme_1a1kq"]
 
 [node name="Opcje aut" type="Control"]
 layout_mode = 3
@@ -36,10 +34,7 @@ offset_top = 257.0
 offset_right = 690.0
 offset_bottom = 473.0
 
-[node name="wybierz" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="poprzedni" type="Button" parent="VBoxContainer"]
+[node name="Zmien auto" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
 size_flags_stretch_ratio = 0.0
@@ -50,22 +45,10 @@ action_mode = 0
 text = "Poprzedni"
 icon_alignment = 1
 
-[node name="nastepny" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_1a1kq")
-theme_type_variation = &"FlatButton"
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_yw46o")
-theme_override_font_sizes/font_size = 80
-text = "Następny"
-
 [node name="powrót" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "POWRÓT"
 
-[connection signal="pressed" from="VBoxContainer/wybierz" to="." method="_on_wybierz_pressed"]
-[connection signal="pressed" from="VBoxContainer/poprzedni" to="." method="_on_poprzedni_pressed"]
-[connection signal="pressed" from="VBoxContainer/nastepny" to="." method="_on_nastepny_pressed"]
+[connection signal="pressed" from="VBoxContainer/Zmien auto" to="." method="_on_zmien_auto_pressed"]
+[connection signal="pressed" from="VBoxContainer/Zmien auto" to="." method="_on_powrót_pressed"]
 [connection signal="pressed" from="VBoxContainer/powrót" to="." method="_on_powrót_pressed"]
