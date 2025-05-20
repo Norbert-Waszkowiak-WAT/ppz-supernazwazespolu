@@ -92,15 +92,14 @@ Grupą docelową są osoby zainteresowane nauką i doskonaleniem umiejętności 
 - **Udoskonalenie sterowania pojazdem** – Michał Grzęda  
 - **Poprawa systemu kolizji (np. lepsza detekcja błędów)** – Oliwia Mikucka  
 - **Animacje i efekty dźwiękowe (np. dźwięk uderzenia w przeszkodę)** – Maciej Wargowski  
-- **Optymalizacja sceny gry (np. poprawa wydajności)** – Oliwia Mikucka  
 - **Testowanie stabilności i poprawa błędów** – Michał Grzęda  
 
 **Etap 3: Dodanie poziomów i nowych wyzwań**  
 **Zadania:**  
 - **Implementacja nowych poziomów o różnym stopniu trudności** – Michał Grzęda  
-- **Dodanie przeszkód na parkingu (np. inne pojazdy, słupki)** – Oliwia Mikucka  
-- **Wprowadzenie systemu oceniania parkowania (np. gwiazdki, czas, dokładność)** – Maciej Wargowski  
-- **Testowanie poziomów i balansu rozgrywki** – Michał Grzęda  
+- **Optymalizacja sceny gry (np. poprawa wydajności)** – Oliwia Mikucka  
+– **Testowanie poziomów i balansu rozgrywki** Maciej Wargowski  
+
 
 **Etap 4: Finalizacja gry i dodatkowe funkcje**  
 **Zadania:**  
