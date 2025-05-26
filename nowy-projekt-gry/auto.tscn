@@ -9,6 +9,9 @@ radius = 3.54128
 height = 7.08256
 
 [sub_resource type="FontFile" id="FontFile_582py"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
