@@ -49,6 +49,6 @@ icon_alignment = 1
 layout_mode = 2
 text = "POWRÓT"
 
-[connection signal="pressed" from="VBoxContainer/Zmien auto" to="." method="_on_powrót_pressed"]
 [connection signal="pressed" from="VBoxContainer/Zmien auto" to="." method="_on_zmien_auto_pressed"]
+[connection signal="pressed" from="VBoxContainer/Zmien auto" to="." method="_on_powrót_pressed"]
 [connection signal="pressed" from="VBoxContainer/powrót" to="." method="_on_powrót_pressed"]

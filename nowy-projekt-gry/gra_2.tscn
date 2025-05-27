@@ -86,7 +86,7 @@ shape = SubResource("RectangleShape2D_cmy3m")
 script = ExtResource("6_hqppi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="parking1"]
-position = Vector2(771.5, 251.5)
+position = Vector2(770, 854)
 shape = SubResource("RectangleShape2D_uwsqt")
 
 [node name="Area2D2" type="Area2D" parent="."]
