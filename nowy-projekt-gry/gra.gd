@@ -25,3 +25,11 @@ func _on_parking_1_body_entered(body: Node2D) -> void:
 func _on_body_entered(body):
 	if body.is_in_group("car"):
 		get_tree().change_scene_to_file("res://gra_2.tscn")
+
+
+func _on_parking_2_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://gra_3.tscn")
+
+
+func _on_area_2d_4_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://menu.tscn")

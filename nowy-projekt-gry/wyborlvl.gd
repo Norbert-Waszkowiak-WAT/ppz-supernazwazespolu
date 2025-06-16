@@ -13,3 +13,9 @@ func _on_graj_2_pressed() -> void:
 
 func _on_graj_3_pressed() -> void:
 	get_tree().change_scene_to_file("res://gra_3.tscn")
+	
+func _on_graj_4_pressed() -> void:
+	get_tree().change_scene_to_file("res://gra_4.tscn")
+
+func _on_graj_5_pressed() -> void:
+	get_tree().change_scene_to_file("res://gra_5.tscn")

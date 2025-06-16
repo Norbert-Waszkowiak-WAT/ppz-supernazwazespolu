@@ -1,11 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://c6qiy08l7fy4a"]
+[gd_scene load_steps=9 format=3 uid="uid://c6qiy08l7fy4a"]
 
-[ext_resource type="Script" path="res://gra.gd" id="1_w7ihn"]
-[ext_resource type="Texture2D" uid="uid://bm6f11woirxy8" path="res://grafiki pozostałe/parking.png" id="2_pupc1"]
+[ext_resource type="Script" path="res://gra_4.gd" id="1_xr3kv"]
+[ext_resource type="Texture2D" uid="uid://ctrwb5lc73vto" path="res://grafiki pozostałe/parking 3.png" id="2_tv1nu"]
 [ext_resource type="PackedScene" uid="uid://bd072kqtvb4gy" path="res://auto.tscn" id="3_bayml"]
-[ext_resource type="Texture2D" uid="uid://vytcbnhfe8dp" path="res://grafiki pozostałe/tree.png" id="4_7tdqs"]
-[ext_resource type="Script" path="res://parking1.gd" id="5_4vm3d"]
-[ext_resource type="Texture2D" uid="uid://cswy0kvlrc8cl" path="res://grafiki/treee.png" id="6_7tsnl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8y5mv"]
 size = Vector2(203, 207)
@@ -19,18 +16,18 @@ size = Vector2(1920.5, 59.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cmy3m"]
 size = Vector2(106, 1128)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwsqt"]
-size = Vector2(73, 63)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_om5oi"]
+size = Vector2(101.5, 73)
 
-[node name="gra_3" type="Node2D"]
+[node name="gra_4" type="Node2D"]
 position = Vector2(0, 1)
-script = ExtResource("1_w7ihn")
+script = ExtResource("1_xr3kv")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 581.0
 offset_bottom = 392.0
 scale = Vector2(3.3063, 2.75404)
-texture = ExtResource("2_pupc1")
+texture = ExtResource("2_tv1nu")
 
 [node name="auto" parent="." instance=ExtResource("3_bayml")]
 position = Vector2(363, 553)
@@ -42,13 +39,8 @@ position = Vector2(363, 553)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(1383, 796)
+position = Vector2(1161, 783)
 shape = SubResource("RectangleShape2D_8y5mv")
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(1387, 794)
-scale = Vector2(0.548851, 0.538075)
-texture = ExtResource("4_7tdqs")
 
 [node name="Button" type="Button" parent="."]
 offset_left = 1810.0
@@ -86,41 +78,30 @@ shape = SubResource("RectangleShape2D_cmy3m")
 [node name="muzyka" type="AudioStreamPlayer2D" parent="."]
 autoplay = true
 
-[node name="parking1" type="Area2D" parent="."]
-script = ExtResource("5_4vm3d")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="parking1"]
-position = Vector2(1373, 281)
-shape = SubResource("RectangleShape2D_uwsqt")
-
 [node name="Area2D2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(972, 522)
+position = Vector2(1392, 289)
 shape = SubResource("RectangleShape2D_8y5mv")
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
-position = Vector2(975, 519)
-scale = Vector2(0.560345, 0.56681)
-texture = ExtResource("4_7tdqs")
 
 [node name="Area2D3" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(566, 289)
+position = Vector2(941, 282)
 shape = SubResource("RectangleShape2D_8y5mv")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D3"]
-position = Vector2(568, 292)
-scale = Vector2(0.548851, 0.538075)
-texture = ExtResource("6_7tsnl")
+[node name="Area2D4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2(1165, 244)
+shape = SubResource("RectangleShape2D_om5oi")
 
 [connection signal="body_entered" from="Area2D" to="auto" method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="body_entered" from="parking1" to="." method="_on_parking_1_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="auto" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D3" to="auto" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D4" to="." method="_on_area_2d_4_body_entered"]
