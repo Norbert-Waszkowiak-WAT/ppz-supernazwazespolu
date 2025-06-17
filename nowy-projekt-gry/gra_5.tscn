@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cisbqi1eok0vk"]
+[gd_scene load_steps=12 format=3 uid="uid://0y2kqiw5oswo"]
 
-[ext_resource type="Script" path="res://gra.gd" id="1_m644l"]
-[ext_resource type="Texture2D" uid="uid://cy583kj4njrp6" path="res://grafiki pozostałe/parking 4.png" id="2_7il2g"]
-[ext_resource type="PackedScene" uid="uid://bd072kqtvb4gy" path="res://auto.tscn" id="3_ceisr"]
+[ext_resource type="Script" path="res://gra.gd" id="1_gsxdc"]
+[ext_resource type="Texture2D" uid="uid://brc4pucbhsjx2" path="res://grafiki pozostałe/parking 6.png" id="2_awnul"]
+[ext_resource type="PackedScene" uid="uid://bd072kqtvb4gy" path="res://auto.tscn" id="3_sex55"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8y5mv"]
-size = Vector2(203, 207)
+[sub_resource type="CircleShape2D" id="CircleShape2D_aw6tm"]
+radius = 109.238
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3h58d"]
 bg_color = Color(9.62615e-08, 0.142637, 0.419396, 1)
@@ -16,20 +16,31 @@ size = Vector2(1920.5, 59.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cmy3m"]
 size = Vector2(106, 1128)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gbbb8"]
-size = Vector2(93, 87)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_36q4t"]
+radius = 113.0
+height = 234.0
 
-[node name="gra2" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ytyww"]
+radius = 113.0
+height = 226.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2xi1"]
+size = Vector2(648.5, 138)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_om5oi"]
+size = Vector2(101.5, 73)
+
+[node name="gra_5" type="Node2D"]
 position = Vector2(0, 1)
-script = ExtResource("1_m644l")
+script = ExtResource("1_gsxdc")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 581.0
 offset_bottom = 392.0
 scale = Vector2(3.3063, 2.75404)
-texture = ExtResource("2_7il2g")
+texture = ExtResource("2_awnul")
 
-[node name="auto" parent="." instance=ExtResource("3_ceisr")]
+[node name="auto" parent="." instance=ExtResource("3_sex55")]
 position = Vector2(363, 553)
 
 [node name="Camera2D" type="Camera2D" parent="auto"]
@@ -39,8 +50,8 @@ position = Vector2(363, 553)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(775, 778)
-shape = SubResource("RectangleShape2D_8y5mv")
+position = Vector2(1292, 804)
+shape = SubResource("CircleShape2D_aw6tm")
 
 [node name="Button" type="Button" parent="."]
 offset_left = 1810.0
@@ -75,21 +86,42 @@ shape = SubResource("RectangleShape2D_cmy3m")
 position = Vector2(1975, 563)
 shape = SubResource("RectangleShape2D_cmy3m")
 
-[node name="parking2" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="parking2"]
-position = Vector2(975, 817)
-shape = SubResource("RectangleShape2D_gbbb8")
+[node name="muzyka" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
 
 [node name="Area2D2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(1170, 792)
-shape = SubResource("RectangleShape2D_8y5mv")
+position = Vector2(1082, 298)
+shape = SubResource("CapsuleShape2D_36q4t")
+
+[node name="Area2D3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(666, 549)
+shape = SubResource("CapsuleShape2D_ytyww")
+
+[node name="Area2D5" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(594, 915)
+shape = SubResource("RectangleShape2D_d2xi1")
+
+[node name="Area2D4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2(1359, 268)
+shape = SubResource("RectangleShape2D_om5oi")
 
 [connection signal="body_entered" from="Area2D" to="auto" method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="body_entered" from="parking2" to="." method="_on_parking_2_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="auto" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="auto" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D5" to="auto" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D4" to="." method="_on_area_2d_4_body_entered"]

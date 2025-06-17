@@ -1,13 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bqfnci06sopd3"]
+[gd_scene load_steps=9 format=3 uid="uid://bqfnci06sopd3"]
 
 [ext_resource type="Script" path="res://gra.gd" id="1_bawpf"]
 [ext_resource type="Texture2D" uid="uid://bm6f11woirxy8" path="res://grafiki pozostałe/parking.png" id="1_uhjot"]
 [ext_resource type="PackedScene" uid="uid://bd072kqtvb4gy" path="res://auto.tscn" id="2_swsei"]
-[ext_resource type="Texture2D" uid="uid://vytcbnhfe8dp" path="res://grafiki pozostałe/tree.png" id="3_ovsjn"]
 [ext_resource type="Script" path="res://parking1.gd" id="6_a3itt"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8y5mv"]
-size = Vector2(203, 207)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3h58d"]
 bg_color = Color(9.62615e-08, 0.142637, 0.419396, 1)
@@ -34,19 +30,6 @@ texture = ExtResource("1_uhjot")
 position = Vector2(363, 553)
 
 [node name="Camera2D" type="Camera2D" parent="auto"]
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-light_mask = 2
-visibility_layer = 2
-position = Vector2(1352, 545)
-shape = SubResource("RectangleShape2D_8y5mv")
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(1356, 553)
-scale = Vector2(0.556035, 0.586207)
-texture = ExtResource("3_ovsjn")
 
 [node name="Button" type="Button" parent="."]
 offset_left = 1810.0
@@ -88,6 +71,13 @@ script = ExtResource("6_a3itt")
 position = Vector2(771.5, 251.5)
 shape = SubResource("RectangleShape2D_uwsqt")
 
-[connection signal="body_entered" from="Area2D" to="auto" method="_on_area_2d_body_entered"]
+[node name="parking11" type="Area2D" parent="."]
+script = ExtResource("6_a3itt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parking11"]
+position = Vector2(1180, 825)
+shape = SubResource("RectangleShape2D_uwsqt")
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="body_entered" from="parking1" to="." method="_on_parking_1_body_entered"]
+[connection signal="body_entered" from="parking11" to="." method="_on_parking_1_body_entered"]
